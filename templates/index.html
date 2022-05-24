@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Welcome to Cat Finder!</h1>
+      <p class="lead">Find the perfect cat fit for you. Browse different breeds to learn more about them. Or filter them.</p>
+    </div>
+</div>
+<div>
+  <form id="filter-cats-form">
+    <label for="energy-level">Energy Level</label>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm" id="energy-level">
+      <option selected>--Select a level--</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five</option>
+    </select>
+    <label for="intelligence">Intelligence</label>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm" id="intelligence">
+      <option selected>--Select a level--</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five</option>
+    </select>
+    <label for="social-needs">Social Needs</label>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm" id="social-needs">
+      <option selected>--Select a level--</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five</option>
+    </select>
+    <input class="form-check-input" type="checkbox" value="" id="hypoallergenic">
+    <label class="form-check-label" for="hypoallergenic">
+      Hypoallergenic
+    </label>
+    <input type="submit" class="btn btn-primary btn-sm" value="Filter" id="filter-button" >
+  </form>
+</div>
+<div class="container">
+    <div class="row">
+    {% for breed in breeds %}
+        <div class="col-2 cat-grid" data-energy-level="{{breed.energy_level}}" data-intelligence="{{breed.intelligence}}" data-social-needs="{{breed.social_needs}}" data-hypoallergenic="{{breed.hypoallergenic}}">
+            <a href="/cats/{{breed.id}}">
+            <figure>
+            {% if breed.image %}
+            <img class="cat-img-thumbnail" src="{{breed.image.url}}" alt="Image of {{breed.name}}">
+            {% else %}
+            <img class="cat-img-thumbnail" src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="Image not available">
+            {% endif %}
+            <figcaption>{{breed.name}}</figcaption>
+            </figure>
+            </a>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

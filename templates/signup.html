@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="row justify-content-md-center">
+  <div class="col-md-7 col-lg-5">
+    <h2 class="join-message">Join Cat Finder today.</h2>
+    <form method="POST" id="signup_user_form">
+      {{ form.hidden_tag() }}
+
+      {% for field in form if field.widget.input_type != 'hidden' %}
+      <div class="form-group">
+        <label for="{{field.label.text}}">{{field.label.text}}</label>
+        {{ field(class="form-control") }}
+        {% for error in field.errors %}
+          <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+    </div>
+      {% endfor %}
+
+      <button class="btn btn-primary btn-block">Sign me up!</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

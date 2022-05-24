@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+<div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <img src="{{user.image_url}}" alt="avatar"
+            class="rounded-circle img-fluid user-avatar">
+          <h5 class="my-3">@{{user.username}}</h5>
+          <p class="text-muted mb-4">{{user.email}}</p>
+          {% if user.id == g.user.id %}
+          <div class="d-flex justify-content-center mb-2">
+            <a class="btn btn-primary" href="/users/{{g.user.id}}/edit">Edit</a>
+            <a class="btn btn-dark" href="/users/delete">Delete</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+              <div class="row mb-4">
+                <h2 class="display-6">Favorited Cats</h2>
+              </div>
+            {% for breed in fav_breeds %}
+            <div class="row favorited-cats">
+              <div class="col-sm-3">
+                <img class="cat-img-thumbnail" src="{{breed.image.url}}" alt="Image of {{breed.name}}">
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0"><a class="btn btn-lg" href="/cats/{{breed.id}}">{{breed.name}}</a></p>
+                <p class="text-muted mb-0">{{breed.temperament}}</p>
+              </div>
+              <div class="col-sm-3">
+                <span class="fa fa-trash" aria-hidden="true" data-breed="{{breed.name}}"></span>
+              </div>
+            </div>
+            <hr>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

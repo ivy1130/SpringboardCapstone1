@@ -1,0 +1,108 @@
+/*****************************************************************************
+/* Navbar */
+
+#logout-button {
+    border: none;
+    background: none;
+}
+
+
+/*****************************************************************************
+/* Index */
+
+#filter-cats-form {
+    margin-bottom: 30px;
+}
+
+#filter-cats-form select {
+    margin-right: 10px;
+}
+
+input#hypoallergenic {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.form-check-label {
+    margin-left: 35px;
+}
+
+#filter-button  {
+    margin-left: 30px;
+}
+
+.cat-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-img-thumbnail {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    text-align: center;
+    color: black;
+}
+
+
+/*****************************************************************************
+/* Cat Breed Info */
+
+#image-carousel {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit:scale-down
+}
+
+.card-columns {
+    column-count: 2;
+ }
+
+.card-body .mb-4 {
+    justify-content: center;
+}
+
+.fa-star{
+    cursor: pointer;
+}
+
+.fa-solid.fa-star {
+    color: rgba(0,0,0,0.2);
+}
+
+.fa-solid.fa-star:hover {
+    color: rgba(0,0,0);
+}
+
+.fa-solid.fa-star.favorited,
+.fa-solid.fa-star.favorited:hover {
+    color: rgba(0,0,0);
+}
+
+
+/*****************************************************************************
+/* User Profile */
+
+.user-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.fa-trash {
+    cursor: pointer;
+}
