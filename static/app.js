@@ -1,4 +1,4 @@
-BASE_URL = "http://127.0.0.1:5000/api"
+BASE_URL = "https://springboard-ivy-capstone-1.herokuapp.com/api"
 
 
 //////////////////////////////////////////////////////////////////////////////
