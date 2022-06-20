@@ -18,7 +18,7 @@ BASE_URL = "https://api.thecatapi.com/v1"
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    os.environ.get('DATABASE_URL', ('postgresql:///cat_finder').replace("://", "ql://", 1)))
+    os.environ.get('DATABASE_URL', 'postgres:///cat_finder'))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
