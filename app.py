@@ -1,6 +1,4 @@
-from ast import Num
 import os
-import re
 import requests
 
 from auth import API_KEY
@@ -19,7 +17,7 @@ BASE_URL = "https://api.thecatapi.com/v1"
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    os.environ.get('DATABASE_URL', 'postgresql://cat_finder'))
+    os.environ.get('DATABASE_URL'))
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
